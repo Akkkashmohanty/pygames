@@ -16,3 +16,6 @@ PLAYER_VEL = 5
 window = pygame.display.set_mode((WIDTH, HIGHT))
 
 
+def main(window):
+    pass
+
