@@ -26,8 +26,14 @@ def get_background(name):
     
     return image, tiles
 
+def draw(window, background, bg_image):
+    for tile in background:
+        window.blit(bg_image, tuple(tile))
+
 def main(window):
     clock = pygame.time.Clock()
+    background, bg_image = get_background("Blue.png")
+
     run = True
     while run:
         clock.tick(FPS)
