@@ -16,8 +16,15 @@ PLAYER_VEL = 5
 window = pygame.display.set_mode((WIDTH, HIGHT))
 
 def get_background(name):
-    pass
-
+    image = pygame.image.load(os.path.join("assets", "backgrounds", name))
+    _,_, width, height = image.get_rect()
+    tiles = []
+    for i in range(WIDTH // width + 1):
+        for j in range(HIGHT // height + 1):
+            pos = [i * width, j * height]
+            tiles.append((pos))
+    
+    return image, tiles
 
 def main(window):
     clock = pygame.time.Clock()
